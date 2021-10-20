@@ -13,6 +13,9 @@ const expert_mode_client = require('./routes/export_mode_client');
 // const url = process.env.API_URL;
 connectDatabase();
 require('./auth');
+app.get('/', (req, res) => {
+	res.json({ msg: 'server started' });
+});
 app.use(express.json({ useNewUrlParser: true }));
 //auth routes
 app.use(`/auth`, passport.initialize(), google_auth);
