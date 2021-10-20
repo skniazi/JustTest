@@ -24,5 +24,5 @@ app.use('/user/awards', user_awards);
 app.use('/user/settings/expert_mode', expert_mode);
 app.use('/user/clients/', expert_mode_client);
 app.listen(port, function() {
-	console.log('Express app listening on port 5002!');
+	console.log('Express app listening on port 5002!' + this.address().port, app.settings.env);
 });
