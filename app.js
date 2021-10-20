@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 const passport = require('passport');
+require('dotenv').config();
 const port = 5002 || process.env.PORT;
 const { connectDatabase } = require('./db');
 const google_auth = require('./routes/google_auth');
