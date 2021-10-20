@@ -15,9 +15,9 @@ connectDatabase();
 require('./auth');
 app.use(express.json({ useNewUrlParser: true }));
 //auth routes
-app.use('url/auth', passport.initialize(), google_auth);
-app.use('url/auth', passport.initialize(), google_auth);
-app.use('url/verify', google_auth);
+app.use(`${url}/auth`, passport.initialize(), google_auth);
+app.use(`${url}/auth`, passport.initialize(), google_auth);
+app.use('/verify', google_auth);
 //user post routes
 app.use('/user', user_posts);
 //user awards routes
