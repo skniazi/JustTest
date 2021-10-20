@@ -9,14 +9,14 @@ const user_posts = require('./routes/user_posts');
 const user_awards = require('./routes/user_awards');
 const expert_mode = require('./routes/expert_mode');
 const expert_mode_client = require('./routes/export_mode_client');
-require('dotenv').config();
-const url = process.env.API_URL;
+// require('dotenv').config();
+// const url = process.env.API_URL;
 connectDatabase();
 require('./auth');
 app.use(express.json({ useNewUrlParser: true }));
 //auth routes
-app.use(`${url}/auth`, passport.initialize(), google_auth);
-app.use(`${url}/auth`, passport.initialize(), google_auth);
+app.use(`/auth`, passport.initialize(), google_auth);
+app.use(`/auth`, passport.initialize(), google_auth);
 app.use('/verify', google_auth);
 //user post routes
 app.use('/user', user_posts);
